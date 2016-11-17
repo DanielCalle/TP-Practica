@@ -95,19 +95,6 @@ public class Engine {
 	}
 
 	/**
-	 * Ejecuta el comando NEWINST
-	 * @param instruction una instancia de la clase ByteCode
-	 * @return si la instruccion es correcta devuelve true de lo contrario devulve false
-	 */
-	public boolean executeNewinst(ByteCode instruction) {
-		if (instruction == null)
-			return false;
-		else {
-			return this.program.add(instruction);
-		}
-	}
-
-	/**
 	 * Ejecuta el comando RUN
 	 * @return Si el programa se ejecuta sin errores devuelve true si encuentra alguno devuelve false
 	 */
