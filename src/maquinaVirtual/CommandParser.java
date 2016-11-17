@@ -37,26 +37,17 @@ public class CommandParser {
 					case "RESET":
 						return new Command(ENUM_COMMAND.RESET);
 		
+					case "BYTECODE":
+						return new Command(ENUM_COMMAND.BYTECODE);
+						
 					default:
 						return null;
 				}
 
 			case 2:
+				
 				if (lineSplit[0].compareTo("REPLACE") == 0)
 					return new Command(ENUM_COMMAND.REPLACE, Integer.parseInt(lineSplit[1]));
-	
-			case 3:
-				if (lineSplit[0].compareTo("NEWINST") == 0) {
-					if (lineSplit.length == 3)
-						line = lineSplit[1] + " " + lineSplit[2];
-					else
-						line = lineSplit[1];
-	
-					ByteCode instruction = ByteCodeParser.parse(line);
-					return new Command(ENUM_COMMAND.NEWINST, instruction);
-				}
-				else
-					return null;
 	
 			default:
 				return null;

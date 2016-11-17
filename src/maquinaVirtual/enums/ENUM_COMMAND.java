@@ -9,6 +9,6 @@ package maquinaVirtual.enums;
  */
 public enum ENUM_COMMAND {
 
-	HELP, QUIT, NEWINST, RUN, RESET, REPLACE;
+	HELP, QUIT, BYTECODE, RUN, RESET, REPLACE;
 
 }

@@ -150,4 +150,28 @@ public class Engine {
 			return false;
 	}
 	
+	public boolean readByteCodeProgram() {
+		
+		String line = "";
+		ByteCode instruction;
+		boolean endBC = false; 
+		boolean statusOkey = true;
+		
+		System.out.println("Introduce el bytecode. Una instrucción por línea:");
+		
+		do {
+			line = sc.nextLine();
+			instruction = ByteCodeParser.parse(line);
+			if( instruction == null ){	
+				endBC = line.trim().compareToIgnoreCase("END") == 0;	
+				if( !endBC )
+					statusOkey = false;
+			}
+			else
+				this.program.add(instruction);
+		} while( !endBC && statusOkey );
+		
+		return statusOkey;
+	}
+	
 }
