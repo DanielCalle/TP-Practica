@@ -95,39 +95,6 @@ public class Engine {
 	}
 
 	/**
-	 * Ejecuta el comando RUN
-	 * @return Si el programa se ejecuta sin errores devuelve true si encuentra alguno devuelve false
-	 */
-	public boolean executeRun() {
-		int pc = 0;
-		this.cpu.reset();
-		boolean programStatusOkey = true;
-		ByteCode currentInstruction = null; 
-
-		while (programStatusOkey && pc < this.program.getNumInstr() && !cpu.isHalt() ) {
-			currentInstruction = this.program.getInstruction(pc);
-			if (currentInstruction != null) {
-				programStatusOkey = cpu.execute(currentInstruction);
-				pc++;
-				if (programStatusOkey) {
-					System.out.println("El estado de la máquina tras ejecutar el bytecode "
-							+ currentInstruction.toString() + " es:" 
-							+ System.getProperty("line.separator")
-							+ System.getProperty("line.separator")
-							+ cpu.toString()
-							+ System.getProperty("line.separator"));
-				}
-				
-			} else {
-				programStatusOkey = false;
-			}
-		}
-
-		return programStatusOkey;
-
-	}
-
-	/**
 	 * Ejecuta el comando REPLACE
 	 * @param programLine posicion de la línea del programa a reemplazar
 	 * @return si se ejecuta correctamente devuelve true si la posicion es inexistente devuelve false

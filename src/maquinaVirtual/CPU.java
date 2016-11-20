@@ -13,111 +13,62 @@ public class CPU {
 	private boolean halt;
 	private Memory memory;
 	private OperandStack stack;
+	private int programCounter;
+	private ByteCodeProgram bcProgram;
 
 	public CPU() {
 		this.halt = false;
 		this.memory = new Memory();
 		this.stack = new OperandStack();
+		this.bcProgram = new ByteCodeProgram();
+		this.programCounter = 0;
 	}
 
-	/**
-	 * Es el encargado de ejecutar la instrucción que le llega como parámetro
-	 * modificando convenientemente la memoria y/o la pila de operandos. Si la
-	 * ejecución genera un error el método devuelve false.
-	 * 
-	 * @param instruction una instancia de la clase ByteCode
-	 * @return un booleano que indica si la ejecución fue correcta
-	 */
-	public boolean execute(ByteCode instruction) {
+	public boolean run() {
+		this.reset();
+		boolean programStatusOkey = true;
+		ByteCode currentInstruction;
 
-		int data1, data2;
+		while (programStatusOkey && this.programCounter < this.bcProgram.getNumInstr() && !this.halt) {
+			currentInstruction = this.bcProgram.getInstruction(this.programCounter);
+			if (currentInstruction != null) {
+				programStatusOkey = currentInstruction.execute(this);
+				this.programCounter++;
+				if (programStatusOkey) {
+					System.out.println("El estado de la máquina tras ejecutar el bytecode "
+							+ currentInstruction.toString() + " es:"
+							+ System.getProperty("line.separator")
+							+ System.getProperty("line.separator")
+							+ this.toString()
+							+ System.getProperty("line.separator"));
+				}
 
-		if (isHalt())
-			return true;
-		else {
-			switch (instruction.getName()) {
-				case PUSH:
-					return this.stack.push(instruction.getParam());
-					
-				case LOAD:
-					data1 = this.memory.read(instruction.getParam());
-					this.stack.push(data1);
-					return true;
-					
-				case STORE:
-					if (this.stack.getNumElems() == 0)
-						return false;
-					else {
-						data1 = this.stack.pop();
-						this.memory.write(instruction.getParam(), data1);
-						return true;
-					}
-					
-				case ADD:
-					if (this.stack.getNumElems() < 2)
-						return false;
-					else {
-						data1 = this.stack.pop();
-						data2 = this.stack.pop();
-						data1 = data2 + data1;
-						return this.stack.push(data1);
-					}
-					
-				case SUB:
-					if (this.stack.getNumElems() < 2)
-						return false;
-					else {
-						data1 = this.stack.pop();
-						data2 = this.stack.pop();
-						data1 = data2 - data1;
-						return this.stack.push(data1);
-					}
-					
-				case MUL:
-					if (this.stack.getNumElems() < 2)
-						return false;
-					else {
-						data1 = this.stack.pop();
-						data2 = this.stack.pop();
-						data1 = data2 * data1;
-						return this.stack.push(data1);
-					}
-					
-				case DIV:
-					if (this.stack.getNumElems() < 2)
-						return false;
-					else {
-						data1 = this.stack.pop();
-						data2 = this.stack.pop();
-						if (data1 == 0)
-							return false;
-						else {
-							data1 = data2 / data1;
-							return this.stack.push(data1);
-						}
-					}
-					
-				case OUT:
-					System.out.println("OUT: " + this.stack.pop());
-					return true;
-					
-				case HALT:
-					this.halt = true;
-					return true;
-					
-				default:
-					return false;
+			} else {
+				programStatusOkey = false;
 			}
 		}
 
+		return programStatusOkey;
 	}
 
-	/**
-	 * Devuelve true o false dependiendo de si la CPU esta en modo halt.
-	 * @return valor del atributo halt
-	 */
-	public boolean isHalt() {
-		return this.halt;
+	public boolean push(int n) {
+		return stack.push(n);
+	}
+
+	public int pop(){
+		return stack.pop();
+	}
+
+	public int read(int n) {
+		return memory.read(n);
+	}
+
+	public boolean write(int n) {
+		return memory.write(n, stack.pop());
+	}
+
+	public boolean addByteCode(ByteCode bc) {
+		return bcProgram.add(bc);
 	}
 
 	/**
@@ -126,6 +77,22 @@ public class CPU {
 	public void reset() {
 		this.stack.reset();
 		this.memory.reset();
+	}
+
+	public boolean setProgramCounter(int programCounter) {
+		if(this.programCounter < bcProgram.getNumInstr() && this.programCounter >= 0) {
+			this.programCounter = programCounter;
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isHalt() {
+		return halt;
+	}
+
+	public void setHalt() {
+		this.halt = true;
 	}
 
 	/**
