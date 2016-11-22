@@ -84,7 +84,8 @@ public class CPU {
 			this.programCounter = programCounter;
 			return true;
 		}
-		return false;
+		else
+			return false;
 	}
 
 	public boolean isHalt() {
