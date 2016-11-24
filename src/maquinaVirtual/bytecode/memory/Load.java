@@ -1,4 +1,4 @@
-package maquinaVirtual.byteCode;
+package maquinaVirtual.bytecode.memory;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
@@ -6,29 +6,29 @@ import maquinaVirtual.CPU;
 /**
  * Created by danie on 20/11/2016.
  */
-public class GoTo extends ByteCode {
-
+public class Load extends ByteCode {
 	private int param;
 
 	/**
-	 * Constructor para GoTo
+	 * Constructor para Load
 	 *
 	 * @param param de la instrucción
 	 */
-	public GoTo(int param) {
-		super("GOTO");
+	public Load(int param) {
+		super("LOAD");
 		this.param = param;
 	}
 
 	@Override
 	public boolean execute(CPU cpu) {
-		return cpu.setProgramCounter(this.param);
+		cpu.increaseProgramCounter();
+		return cpu.push(cpu.read(this.param));
 	}
 
 	@Override
 	public ByteCode parse(String[] s) {
-		if (s[0].compareTo("GOTO") == 0)
-			return new GoTo(Integer.parseInt(s[1]));
+		if (s[0].compareTo("LOAD") == 0)
+			return new Load(Integer.parseInt(s[1]));
 		else
 			return null;
 	}

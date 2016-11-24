@@ -33,7 +33,6 @@ public class CPU {
 			currentInstruction = this.bcProgram.getInstruction(this.programCounter);
 			if (currentInstruction != null) {
 				programStatusOkey = currentInstruction.execute(this);
-				this.programCounter++;
 				if (programStatusOkey) {
 					System.out.println("El estado de la máquina tras ejecutar el bytecode "
 							+ currentInstruction.toString() + " es:"
@@ -86,6 +85,14 @@ public class CPU {
 		}
 		else
 			return false;
+	}
+
+	public void increaseProgramCounter(){
+		this.programCounter++;
+	}
+
+	public ByteCodeProgram getBcProgram() {
+		return bcProgram;
 	}
 
 	public boolean isHalt() {

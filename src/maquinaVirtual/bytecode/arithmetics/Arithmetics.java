@@ -1,4 +1,4 @@
-package maquinaVirtual.byteCode;
+package maquinaVirtual.bytecode.arithmetics;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
@@ -17,6 +17,7 @@ abstract public class Arithmetics extends ByteCode {
 
 	@Override
 	public boolean execute(CPU cpu) {
+		cpu.increaseProgramCounter();
 		op1 = cpu.pop();
 		op2 = cpu.pop();
 		return true;

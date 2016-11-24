@@ -1,4 +1,4 @@
-package maquinaVirtual.byteCode;
+package maquinaVirtual.bytecode.jumps.conditional;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
@@ -6,31 +6,24 @@ import maquinaVirtual.CPU;
 /**
  * Created by danie on 20/11/2016.
  */
-public class Push extends ByteCode {
+abstract public class ConditionalJumps extends ByteCode {
 
-	private int param;
+	protected int param;
+	protected int c;
+	protected int sc;
 
-	/**
-	 * Constructor para Push
-	 *
-	 * @param param de la instrucción
-	 */
-	public Push(int param) {
-		super("PUSH");
+	public ConditionalJumps(String name, int param) {
+		super(name);
 		this.param = param;
 	}
 
 	@Override
 	public boolean execute(CPU cpu) {
-		return cpu.push(this.param);
-	}
+		cpu.increaseProgramCounter();
+		this.c = cpu.pop();
+		this.sc = cpu.pop();
 
-	@Override
-	public ByteCode parse(String[] s) {
-		if (s[0].compareTo("PUSH") == 0)
-			return new Push(Integer.parseInt(s[1]));
-		else
-			return null;
+		return true;
 	}
 
 	/**

@@ -1,13 +1,13 @@
 package maquinaVirtual;
 
-import maquinaVirtual.byteCode.arithmetics.*;
-import maquinaVirtual.byteCode.conditionalJumps.*;
-import maquinaVirtual.byteCode.GoTo;
-import maquinaVirtual.byteCode.Halt;
-import maquinaVirtual.byteCode.Load;
-import maquinaVirtual.byteCode.Out;
-import maquinaVirtual.byteCode.Push;
-import maquinaVirtual.byteCode.Store;
+import maquinaVirtual.bytecode.arithmetics.*;
+import maquinaVirtual.bytecode.jumps.conditional.*;
+import maquinaVirtual.bytecode.jumps.GoTo;
+import maquinaVirtual.bytecode.Halt;
+import maquinaVirtual.bytecode.memory.Load;
+import maquinaVirtual.bytecode.Out;
+import maquinaVirtual.bytecode.memory.Push;
+import maquinaVirtual.bytecode.memory.Store;
 
 /**
  * Es la clase encargada de parsear un string que contiene un posible bytecode.

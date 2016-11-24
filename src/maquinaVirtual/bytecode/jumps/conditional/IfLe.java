@@ -1,8 +1,7 @@
-package maquinaVirtual.byteCode.conditionalJumps;
+package maquinaVirtual.bytecode.jumps.conditional;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
-import maquinaVirtual.byteCode.ConditionalJumps;
 
 /**
  * Created by danie on 20/11/2016.

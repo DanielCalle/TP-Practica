@@ -1,8 +1,7 @@
-package maquinaVirtual.byteCode.arithmetics;
+package maquinaVirtual.bytecode.arithmetics;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
-import maquinaVirtual.byteCode.Arithmetics;
 
 /**
  * Created by danie on 20/11/2016.

@@ -12,7 +12,6 @@ public class Engine {
 
 	private CPU cpu;
 	private boolean end;
-	private ByteCodeProgram program;
 	private static Scanner sc = new Scanner(System.in);
 
 	/**
@@ -20,7 +19,6 @@ public class Engine {
 	 */
 	public Engine() {
 		this.end = false;
-		this.program = new ByteCodeProgram();
 		this.cpu = new CPU();
 	}
 
@@ -47,7 +45,7 @@ public class Engine {
 				System.out.println("Error: Comando incorrecto.");
 			}
 
-			System.out.println(this.program.toString());
+			System.out.println(cpu.getBcProgram().toString());
 
 		}
 
@@ -62,19 +60,19 @@ public class Engine {
 	}
 	
 	public boolean executeReset() {
-		this.program.reset();
+		cpu.getBcProgram().reset();
 		return true;
 	}
-	
+
 	public boolean executeReplace(int programLine) {
-		if (0 <= programLine && programLine < this.program.getNumInstr()) {
+		if (0 <= programLine && programLine < cpu.getBcProgram().getNumInstr()) {
 			System.out.print("Nueva instrucción: ");
 			String line = sc.nextLine();
 			ByteCode instruction = ByteCodeParser.parse(line);
 			if (instruction == null)
 				return false;
 			else {
-				this.program.replace(instruction, programLine);
+				cpu.getBcProgram().replace(instruction, programLine);
 				return true;
 			}
 
@@ -82,7 +80,7 @@ public class Engine {
 		else
 			return false;
 	}
-	
+
 	public boolean readByteCodeProgram() {
 		
 		String line = "";
@@ -101,7 +99,7 @@ public class Engine {
 					statusOkey = false;
 			}
 			else
-				this.program.add(instruction);
+				cpu.addByteCode(instruction);
 		} while( !endBC && statusOkey );
 		
 		return statusOkey;

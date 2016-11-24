@@ -23,7 +23,7 @@ public class ByteCodeProgram {
 	 * Devuelve el numero de instrucciones que tiene el programa
 	 * @return número de instrucciones
 	 */
-	int getNumInstr() {
+	public int getNumInstr() {
 		return this.numInstr;
 	}
 	

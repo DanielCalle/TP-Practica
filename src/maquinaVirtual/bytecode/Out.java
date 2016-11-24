@@ -1,4 +1,4 @@
-package maquinaVirtual.byteCode;
+package maquinaVirtual.bytecode;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
@@ -6,25 +6,26 @@ import maquinaVirtual.CPU;
 /**
  * Created by danie on 20/11/2016.
  */
-public class Halt extends ByteCode {
+public class Out extends ByteCode {
 
 	/**
-	 * Constructor para Halt
+	 * Constructor para Out
 	 */
-	public Halt() {
-		super("HALT");
+	public Out() {
+		super("OUT");
 	}
 
 	@Override
 	public boolean execute(CPU cpu) {
-		cpu.setHalt();
+		cpu.increaseProgramCounter();
+		System.out.println(cpu.pop());
 		return true;
 	}
 
 	@Override
 	public ByteCode parse(String[] s) {
-		if (s[0].compareTo("HALT") == 0)
-			return new Halt();
+		if (s[0].compareTo("OUT") == 0)
+			return new Out();
 		else
 			return null;
 	}

@@ -1,4 +1,4 @@
-package maquinaVirtual.byteCode;
+package maquinaVirtual.bytecode.memory;
 
 import maquinaVirtual.ByteCode;
 import maquinaVirtual.CPU;
@@ -22,6 +22,7 @@ public class Store extends ByteCode {
 
 	@Override
 	public boolean execute(CPU cpu) {
+		cpu.increaseProgramCounter();
 		return cpu.write(this.param);
 	}
 
