@@ -33,9 +33,7 @@ abstract public class ByteCode {
 	 */
 	public String getName() {
 		return this.name;
-	}
-
-	;
+	};
 
 	@Override
 	public String toString() {

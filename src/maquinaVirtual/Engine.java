@@ -55,52 +55,18 @@ public class Engine {
 		System.out.println("Fin de la ejecución....");
 
 	}
-
-	/**
-	 * Ejecuta el comando HELP
-	 * @return booleano que indica que la ejecución fué correcta
-	 */
-	public static boolean executeHelp() {
-		System.out.println( System.getProperty("line.separator") 
-				+ "HELP: Muestra esta ayuda." 
-				+ System.getProperty("line.separator") 
-				+ "QUIT: Cierra la aplicación." 
-				+ System.getProperty("line.separator")
-				+ "RUN: Ejecuta el programa." 
-				+ System.getProperty("line.separator") + "NEWINST BYTECODE: Instroduce una nueva instrucción al programa.\n"
-				+ "RESET: Vacia el programa actual." 
-				+ System.getProperty("line.separator")
-				+ "REPLACE N: Reemplaza la instrucción N por la solicitada al usuario.");
-
-		return true;
-
-	}
 	
-	/**
-	 * Ejecuta el comando QUIT
-	 * @return booleano que indica que la ejecución fué correcta
-	 */
 	public boolean executeQuit() {
 		this.end = true;
 		return true;
 	}
-
-	/**
-	 * Ejectuta el comando HELP
-	 * @return booleano que indica que la ejecución fué correcta
-	 */
+	
 	public boolean executeReset() {
 		this.program.reset();
 		return true;
 	}
-
-	/**
-	 * Ejecuta el comando REPLACE
-	 * @param programLine posicion de la línea del programa a reemplazar
-	 * @return si se ejecuta correctamente devuelve true si la posicion es inexistente devuelve false
-	 */
+	
 	public boolean executeReplace(int programLine) {
-
 		if (0 <= programLine && programLine < this.program.getNumInstr()) {
 			System.out.print("Nueva instrucción: ");
 			String line = sc.nextLine();
@@ -139,6 +105,10 @@ public class Engine {
 		} while( !endBC && statusOkey );
 		
 		return statusOkey;
+	}
+	
+	public boolean executeRun() {
+		return this.cpu.run();
 	}
 	
 }
