@@ -1,0 +1,18 @@
+push 5
+store 0
+push 2
+store 1
+push 0
+load 0
+ifle 16
+load 1
+load 0
+mul
+store 1
+load 0
+push 1
+sub
+store 0
+goto 4
+halt
+end
