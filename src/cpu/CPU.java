@@ -83,8 +83,8 @@ public class CPU {
 	}
 
 	public boolean setProgramCounter(int programCounter) {
-		if(this.programCounter < bcProgram.getNumInstr() && this.programCounter >= 0) {
-			this.programCounter = programCounter;
+		if( programCounter < bcProgram.getNumInstr() && programCounter >= 0) {
+			programCounter = programCounter;
 			return true;
 		}
 		else

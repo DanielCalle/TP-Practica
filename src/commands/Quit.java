@@ -3,10 +3,6 @@ package commands;
 import main.Engine;
 
 public class Quit extends Command {
-
-	public Quit() {
-		super();
-	}
 	
 	@Override
 	public String textHelp() {

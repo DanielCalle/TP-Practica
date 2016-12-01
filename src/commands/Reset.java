@@ -4,10 +4,6 @@ import main.Engine;
 
 public class Reset extends Command {
 
-	public Reset() {
-		super();
-	}
-	
 	@Override
 	public String textHelp() {
 		return "RESET: Vacia el programa actual." + System.getProperty("line.separator");

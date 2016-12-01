@@ -4,10 +4,6 @@ import main.Engine;
 
 public class Help extends Command {
 
-	public Help() {
-		super();
-	}
-	
 	@Override
 	public String textHelp() {
 		return "HELP: Muestra esta ayuda." + System.getProperty("line.separator");

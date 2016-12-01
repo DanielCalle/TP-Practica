@@ -4,10 +4,6 @@ import main.Engine;
 
 public class Run extends Command {
 
-	public Run() {
-		super();
-	}
-	
 	@Override
 	public String textHelp() {
 		return "RUN: Ejecuta el programa." + System.getProperty("line.separator");

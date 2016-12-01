@@ -7,7 +7,6 @@ public class Replace extends Command {
 	private int argument;
 	
 	public Replace(int argument) {
-		super();
 		this.argument = argument;
 	}
 	
