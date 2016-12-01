@@ -8,18 +8,16 @@ import cpu.CPU;
  */
 public class Div extends Arithmetics {
 
-	public Div() {}
-
 	@Override
-	public ByteCode parse(String[] s) {
-		if (s[0].equalsIgnoreCase("DIV"))
+	public ByteCode parseAux(String s) {
+		if (s.equalsIgnoreCase("DIV"))
 			return new Div();
 		else
 			return null;
 	}
 
 	@Override
-	protected boolean executeAux(int n1, int n2, CPU cpu) {
+	protected boolean execute(int n1, int n2, CPU cpu) {
 		if (n2 == 0)
 			return false;
 		else

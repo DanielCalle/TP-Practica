@@ -1,7 +1,6 @@
 package bytecodes.oneparameter.conditionaljumps;
 
 import bytecodes.ByteCode;
-import cpu.CPU;
 
 public class IfLe extends ConditionalJumps {
 
