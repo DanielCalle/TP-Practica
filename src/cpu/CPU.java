@@ -17,7 +17,7 @@ public class CPU {
 	private boolean halt;
 	private Memory memory;
 	private OperandStack stack;
-	private int programCounter;
+	private int programCounter = 0;
 	private ByteCodeProgram bcProgram;
 
 	public CPU() {
@@ -25,11 +25,11 @@ public class CPU {
 		this.memory = new Memory();
 		this.stack = new OperandStack();
 		this.bcProgram = new ByteCodeProgram();
-		this.programCounter = 0;
 	}
 
 	public boolean run() {
 		this.reset();
+		this.programCounter = 0;
 		boolean programStatusOkey = true;
 		ByteCode currentInstruction;
 
@@ -55,23 +55,23 @@ public class CPU {
 	}
 
 	public boolean push(int n) {
-		return stack.push(n);
+		return this.stack.push(n);
 	}
 
 	public int pop(){
-		return stack.pop();
+		return this.stack.pop();
 	}
 
 	public int read(int n) {
-		return memory.read(n);
+		return this.memory.read(n);
 	}
 
 	public boolean write(int n) {
-		return memory.write(n, stack.pop());
+		return this.memory.write(n, this.stack.pop());
 	}
 
 	public boolean addByteCode(ByteCode bc) {
-		return bcProgram.add(bc);
+		return this.bcProgram.add(bc);
 	}
 
 	/**
@@ -83,8 +83,9 @@ public class CPU {
 	}
 
 	public boolean setProgramCounter(int programCounter) {
-		if( programCounter < bcProgram.getNumInstr() && programCounter >= 0) {
-			programCounter = programCounter;
+		
+		if( programCounter < this.bcProgram.getNumInstr() && programCounter >= 0) {
+			this.programCounter = programCounter;
 			return true;
 		}
 		else
@@ -96,11 +97,11 @@ public class CPU {
 	}
 
 	public ByteCodeProgram getBcProgram() {
-		return bcProgram;
+		return this.bcProgram; 
 	}
 
 	public boolean isHalt() {
-		return halt;
+		return this.halt;
 	}
 
 	public void setHalt() {
@@ -120,7 +121,7 @@ public class CPU {
 	}
 
 	public int getSizeStack() {
-		return stack.getNumElems();
+		return this.stack.getNumElems();
 	}
 
 }

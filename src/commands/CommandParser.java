@@ -9,7 +9,7 @@ public class CommandParser {
 
 	private final static Command[] COMMANDS = {
 			new Help(), new Quit(), new Reset(),
-			new Replace(0), new Run(), new AddByteCodeProgram()
+			new Replace(), new Run(), new AddByteCodeProgram()
 	};
 	
 	public static Command parse(String line) {

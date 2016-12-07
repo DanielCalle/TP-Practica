@@ -4,10 +4,6 @@ import main.Engine;
 
 public class AddByteCodeProgram extends Command {
 	
-	public AddByteCodeProgram() {
-		super();
-	}
-	
 	@Override
 	public String textHelp() {
 		return "BYTECODE: Instroduce una nueva instrucción al programa." + System.getProperty("line.separator");
