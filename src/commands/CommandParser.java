@@ -27,7 +27,8 @@ public class CommandParser {
 
 	 public static void showHelp() {
 		 
-		 for( Command command : COMMANDS ) System.out.print( command.textHelp() );
+		 for( Command command : COMMANDS ) 
+			 System.out.println( command.textHelp() );
 		 
 	 }
 	

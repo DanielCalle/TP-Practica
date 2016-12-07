@@ -14,18 +14,14 @@ import main.ByteCodeProgram;
  */
 
 public class CPU {
-	private boolean halt;
-	private Memory memory;
-	private OperandStack stack;
+	
+	private boolean halt = false;
 	private int programCounter = 0;
-	private ByteCodeProgram bcProgram;
+	private Memory memory = new Memory();
+	private OperandStack stack = new OperandStack();
+	private ByteCodeProgram bcProgram = new ByteCodeProgram();
 
-	public CPU() {
-		this.halt = false;
-		this.memory = new Memory();
-		this.stack = new OperandStack();
-		this.bcProgram = new ByteCodeProgram();
-	}
+	public CPU(ByteCodeProgram program){ this.bcProgram = program;}
 
 	public boolean run() {
 		this.reset();
@@ -94,10 +90,6 @@ public class CPU {
 
 	public void increaseProgramCounter(){
 		this.programCounter++;
-	}
-
-	public ByteCodeProgram getBcProgram() {
-		return this.bcProgram; 
 	}
 
 	public boolean isHalt() {
