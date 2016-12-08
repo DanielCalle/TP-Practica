@@ -3,10 +3,11 @@ package main;
 import bytecodes.ByteCode;
 
 /**
- * Representa el programa actual.
+ * Implementacion de la clase ByteCodeProgram
+ * 
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
- * @version 1.0, 08/11/2016
+ * @version 2.0, 08/12/2016
  */
 public class ByteCodeProgram {
 

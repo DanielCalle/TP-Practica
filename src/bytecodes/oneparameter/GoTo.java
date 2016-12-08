@@ -3,12 +3,26 @@ package bytecodes.oneparameter;
 import bytecodes.ByteCode;
 import cpu.CPU;
 
+/**
+ * Implementacion de la clase GoTo
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 public class GoTo extends ByteCodeOneParameter {
 	
+	/**
+	 * Contructora sin parametros de GoTo
+	 */
 	public GoTo() {}
 	
-	public GoTo(int param) {
-		super(param);
+	/**
+	 * Constructora con parametro de GoTo
+	 * @param p direccion de salto
+	 */
+	public GoTo(int j) {
+		super(j);
 	}
 
 	@Override

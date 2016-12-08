@@ -3,6 +3,13 @@ package bytecodes.arithmetics;
 import bytecodes.ByteCode;
 import cpu.CPU;
 
+/**
+ * Implementacion de la clase Arithmetics
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 abstract public class Arithmetics extends ByteCode {
 
 	protected int n1;
@@ -19,7 +26,14 @@ abstract public class Arithmetics extends ByteCode {
 		else
 			return false;
 		}
-
+	
+	/**
+	 * Ejecuta una operacion aritmética lógica
+	 * @param n1 primer operando
+	 * @param n2 segundo operando
+	 * @param cpu
+	 * @return true si la ejecucion es correcta o false si hubo algun problema
+	 */
 	abstract protected boolean execute(int n1, int n2, CPU cpu);
 
 	@Override
@@ -28,5 +42,10 @@ abstract public class Arithmetics extends ByteCode {
 		else return this.parseAux(words[0]);
 	}
 	
+	/**
+	 * Realiza el parse de una instruccion Arithmetics
+	 * @param string1
+	 * @return un objeto Bytecode si la sintaxis es correcta o null si es incorrecta
+	 */
 	abstract public ByteCode parseAux(String string1);
 }

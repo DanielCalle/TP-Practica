@@ -3,6 +3,13 @@ package bytecodes.arithmetics;
 import bytecodes.ByteCode;
 import cpu.CPU;
 
+/**
+ * Implementacion de la clase Add
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 public class Add extends Arithmetics {
 	
 	@Override

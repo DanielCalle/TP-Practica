@@ -2,10 +2,24 @@ package bytecodes.oneparameter.conditionaljumps;
 
 import bytecodes.ByteCode;
 
+/**
+ * Implementacion de la clase IfEq
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 public class IfEq extends ConditionalJumps {
 
+	/**
+	 * Contructora sin parametros de IfEq
+	 */
 	public IfEq() {}
 	
+	/**
+	 * Constructora con parametro de IfEq
+	 * @param j direccion de salto
+	 */
 	public IfEq(int param) {
 		super(param);
 	}

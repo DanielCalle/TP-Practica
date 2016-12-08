@@ -2,10 +2,24 @@ package bytecodes.oneparameter.conditionaljumps;
 
 import bytecodes.ByteCode;
 
+/**
+ * Implementacion de la clase IfLe
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 public class IfLe extends ConditionalJumps {
 
+	/**
+	 * Contructora sin parametros de IfLe
+	 */
 	public IfLe() {}
 	
+	/**
+	 * Constructora con parametro de IfLe
+	 * @param j direccion de salto
+	 */
 	public IfLe(int param) {
 		super(param);
 	}

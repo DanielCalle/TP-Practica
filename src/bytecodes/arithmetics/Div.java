@@ -4,7 +4,11 @@ import bytecodes.ByteCode;
 import cpu.CPU;
 
 /**
- * Created by danie on 20/11/2016.
+ * Implementacion de la clase Div
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
  */
 public class Div extends Arithmetics {
 

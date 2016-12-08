@@ -32,6 +32,7 @@ public class CPU {
 	 */
 	public boolean run() {
 		this.reset();
+		this.halt = false;
 		this.programCounter = 0;
 		boolean programStatusOkey = true;
 		ByteCode currentInstruction;

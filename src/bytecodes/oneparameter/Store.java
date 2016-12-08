@@ -3,10 +3,24 @@ package bytecodes.oneparameter;
 import bytecodes.ByteCode;
 import cpu.CPU;
 
+/**
+ * Implementacion de la clase Store
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 public class Store extends ByteCodeOneParameter {
 
+	/**
+	 * Contructora sin parametros de Store
+	 */
 	public Store() {}
 	
+	/**
+	 * Constructora con parametro de Sotre
+	 * @param parametro
+	 */
 	public Store(int param) {
 		super(param);
 	}

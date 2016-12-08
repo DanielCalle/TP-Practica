@@ -2,10 +2,24 @@ package bytecodes.oneparameter.conditionaljumps;
 
 import bytecodes.ByteCode;
 
+/**
+ * Implementacion de la clase IfLeq
+ * 
+ * @author Daniel Calle Sánchez
+ * @author Manuel Guerrero Moñús
+ * @version 2.0, 08/12/2016
+ */
 public class IfLeq extends ConditionalJumps {
 
+	/**
+	 * Contructora sin parametros de IfLeq
+	 */
 	public IfLeq() {}
 	
+	/**
+	 * Constructora con parametro de IfLeq
+	 * @param j direccion de salto
+	 */
 	public IfLeq(int param) {
 		super(param);
 	}
