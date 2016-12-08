@@ -1,9 +1,10 @@
 package commands;
 
 /**
+ * Clase que trata de parsear los comandos introducidos por el prompt.
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
- * @version 1.0, 08/11/2016
+ * @version 2.0, 08/12/2016
  */
 public class CommandParser {
 
@@ -12,6 +13,11 @@ public class CommandParser {
 			new Replace(), new Run(), new AddByteCodeProgram()
 	};
 	
+	/**
+	 * Parseador de los comandos del prompt. 
+	 * @param line Recive como parámetro una cadena de texto que contiene lo que se introdujo en el prompt.
+	 * @return Deuelve el comando correspondiente o null si no se pudo parsear el comando introducido.
+	 */
 	public static Command parse(String line) {
 
 		int i = 0;
@@ -25,11 +31,12 @@ public class CommandParser {
 		return command;	
 	}
 
-	 public static void showHelp() {
-		 
+	/**
+	 * Muestra por pantalla la ayuda del intérprete de comandos.
+	 */
+	public static void showHelp() {
 		 for( Command command : COMMANDS ) 
-			 System.out.println( command.textHelp() );
-		 
-	 }
+			 System.out.println( command.textHelp() );	 
+	}
 	
 }

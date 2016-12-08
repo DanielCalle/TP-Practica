@@ -6,7 +6,7 @@ import main.Engine;
  * Representa los distintos comandos que puede utilizar un usuario.
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
- * @version 1.0, 08/11/2016
+ * @version 2.0, 08/12/2016
  */
 public abstract class Command {
 	abstract public String textHelp();

@@ -9,10 +9,9 @@ import cpu.CPU;
 
 /**
  * Representa el bucle de control de la aplicación.
- * 
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
- * @version 1.0, 08/11/2016
+ * @version 2.0, 08/12/2016
  */
 public class Engine {
 
@@ -22,7 +21,7 @@ public class Engine {
 	private static Scanner sc = new Scanner(System.in);
 
 	/**
-	 * Constructor de Engine
+	 * Constructora de Engine.
 	 */
 	public Engine() {
 		this.end = false;
@@ -54,24 +53,35 @@ public class Engine {
 			}
 
 			System.out.println(this.program.toString());
-
 		}
 
 		sc.close();
 		System.out.println("Fin de la ejecución....");
-
 	}
 	
+	/**
+	 * Establece que la máquina virtual va a pararse.
+	 * @return Devuelve un booleano que indica si la ejecución del comando fue correcta.
+	 */
 	public boolean executeQuit() {
 		this.end = true;
 		return true;
 	}
 	
+	/**
+	 * Vacia el programa aactual.
+	 * @return Devuelve un booleano que indica si la ejecución del 
+	 */
 	public boolean executeReset() {
 		this.program.reset();
 		return true;
 	}
 
+	/**
+	 * Realiza la sustitución de una instrucción existente por una nueva isntrucción.
+	 * @param programLine Recive como parámetro el número de línea de la instrucción a reemplazar.
+	 * @return Devuelve un booleano que indica si la ejecución del comando fue correcta.
+	 */
 	public boolean executeReplace(int programLine) {
 		if (0 <= programLine && programLine < this.program.getNumInstr()) {
 			System.out.print("Nueva instrucción: ");
@@ -88,7 +98,11 @@ public class Engine {
 		else
 			return false;
 	}
-
+	
+	/**
+	 * Indica a la CPU que debe de añadir nuevas isntrucciones al programa.
+	 * @return Devuelve un booleano que indica si la introducción de ByteCodes fue correcta.
+	 */
 	public boolean readByteCodeProgram() {
 		
 		String line = "";
@@ -113,6 +127,10 @@ public class Engine {
 		return statusOkey;
 	}
 	
+	/**
+	 * Ordena a la CPU que debe ejecutarse el comando RUN.
+	 * @return Deuvelve un booleano que indica si la ejecuión del comando fue correcta o no.
+	 */
 	public boolean executeRun() {
 		return this.cpu.run();
 	}
