@@ -104,11 +104,11 @@ public class Engine {
 	 * @return Devuelve un booleano que indica si la introducción de ByteCodes fue correcta.
 	 */
 	public boolean readByteCodeProgram() {
-		
 		String line = "";
 		ByteCode instruction;
 		boolean endBC = false; 
 		boolean statusOkey = true;
+		this.program.reset();
 		
 		System.out.println("Introduce el bytecode. Una instrucción por línea:");
 		
