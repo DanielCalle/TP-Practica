@@ -117,8 +117,10 @@ public class Engine {
 			instruction = ByteCodeParser.parse(line);
 			if( instruction == null ){	
 				endBC = line.trim().compareToIgnoreCase("END") == 0;	
-				if( !endBC )
+				if( !endBC ) {
 					statusOkey = false;
+					this.program.reset();
+				}
 			}
 			else
 				cpu.addByteCode(instruction);
