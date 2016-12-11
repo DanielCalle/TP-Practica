@@ -27,7 +27,7 @@ public class Run extends Command {
 	 */
 	@Override
 	public Command parse(String[] s) {
-		if( s[0].compareToIgnoreCase("RUN") == 0 && s.length == 1 ) return new Run(); else return null;
+		if( s[0].equalsIgnoreCase("RUN") && s.length == 1 ) return new Run(); else return null;
 	}
 
 	/**

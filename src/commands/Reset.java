@@ -27,7 +27,7 @@ public class Reset extends Command {
 	 */
 	@Override
 	public Command parse(String[] s) {
-		if( s[0].compareToIgnoreCase("RESET") == 0 && s.length == 1 ) return new Reset(); else return null;
+		if( s[0].equalsIgnoreCase("RESET") && s.length == 1 ) return new Reset(); else return null;
 	}
 
 	/**

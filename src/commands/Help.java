@@ -27,7 +27,7 @@ public class Help extends Command {
 	 */
 	@Override
 	public Command parse(String[] s) {
-		if( s[0].compareToIgnoreCase("HELP") == 0 && s.length == 1 ) return new Help(); else return null;
+		if( s[0].equalsIgnoreCase("HELP") && s.length == 1 ) return new Help(); else return null;
 	}
 
 	/**

@@ -27,7 +27,7 @@ public class Quit extends Command {
 	 */
 	@Override
 	public Command parse(String[] s) {
-		if( s[0].compareToIgnoreCase("QUIT") == 0 && s.length == 1 ) return new Quit(); else return null;
+		if( s[0].equalsIgnoreCase("QUIT") && s.length == 1 ) return new Quit(); else return null;
 	}
 
 	/**

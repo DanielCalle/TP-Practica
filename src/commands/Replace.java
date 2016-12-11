@@ -41,7 +41,7 @@ public class Replace extends Command {
 	 */
 	@Override
 	public Command parse(String[] s) {
-		if( s[0].compareToIgnoreCase("REPLACE") == 0 && s.length == 2 ) {
+		if( s[0].equalsIgnoreCase("REPLACE") && s.length == 2 ) {
 			return new Replace(Integer.parseInt(s[1])); 
 		}
 		else 

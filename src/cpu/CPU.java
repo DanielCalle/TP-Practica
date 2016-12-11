@@ -18,7 +18,7 @@ public class CPU {
 	private int programCounter = 0;
 	private Memory memory = new Memory();
 	private OperandStack stack = new OperandStack();
-	private ByteCodeProgram bcProgram = new ByteCodeProgram();
+	private ByteCodeProgram bcProgram;
 
 	/**
 	 * Constructora por defecto, recive el programa de ByteCodes.

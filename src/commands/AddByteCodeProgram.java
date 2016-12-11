@@ -17,7 +17,7 @@ public class AddByteCodeProgram extends Command {
 	 */
 	@Override
 	public String textHelp() {
-		return "BYTECODE: Instroduce una nueva instrucción al programa." 
+		return "BYTECODE: Permite introducir un programa." 
 				+ System.getProperty("line.separator");
 	}
 
@@ -28,7 +28,7 @@ public class AddByteCodeProgram extends Command {
 	 */
 	@Override
 	public Command parse(String[] s) {
-		if( s[0].compareToIgnoreCase("BYTECODE") == 0 && s.length == 1 ) 
+		if( s[0].equalsIgnoreCase("BYTECODE") && s.length == 1 ) 
 			return new AddByteCodeProgram(); 
 		else 
 			return null;

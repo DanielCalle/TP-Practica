@@ -24,9 +24,9 @@ public class CommandParser {
 		Command command = null;
 		String lineDecode[] = line.toUpperCase().trim().split(" +");
 				
-		do {
-			command = COMMANDS[i++].parse(lineDecode);
-		} while( i < COMMANDS.length && command == null );
+		while( i < CommandParser.COMMANDS.length && command == null ) {
+			command = CommandParser.COMMANDS[i++].parse(lineDecode);
+		}
 		
 		return command;	
 	}
@@ -35,8 +35,8 @@ public class CommandParser {
 	 * Muestra por pantalla la ayuda del intérprete de comandos.
 	 */
 	public static void showHelp() {
-		 for( Command command : COMMANDS ) 
-			 System.out.println( command.textHelp() );	 
+		 for( Command command : CommandParser.COMMANDS ) 
+			 System.out.print( command.textHelp() );	 
 	}
 	
 }

@@ -13,7 +13,6 @@ public class Halt extends ByteCode {
 
 	@Override
 	public boolean execute(CPU cpu) {
-		cpu.increaseProgramCounter();
 		cpu.setHalt();
 		return true;
 	}
