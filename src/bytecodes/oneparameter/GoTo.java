@@ -19,7 +19,7 @@ public class GoTo extends ByteCodeOneParameter {
 	
 	/**
 	 * Constructora con parametro de GoTo
-	 * @param p direccion de salto
+	 * @param j dirección de salto
 	 */
 	public GoTo(int j) {
 		super(j);

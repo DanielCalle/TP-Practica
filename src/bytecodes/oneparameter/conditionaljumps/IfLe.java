@@ -18,10 +18,10 @@ public class IfLe extends ConditionalJumps {
 	
 	/**
 	 * Constructora con parametro de IfLe
-	 * @param j direccion de salto
+	 * @param j dirección de salto
 	 */
-	public IfLe(int param) {
-		super(param);
+	public IfLe(int j) {
+		super(j);
 	}
 	
 	@Override

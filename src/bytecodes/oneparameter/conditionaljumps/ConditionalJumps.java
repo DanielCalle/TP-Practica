@@ -19,7 +19,7 @@ abstract public class ConditionalJumps extends ByteCodeOneParameter {
 
 	/**
 	 * Constructora con parametro de ConditionalJumps
-	 * @param j direccion de salto
+	 * @param j dirección de salto
 	 */
 	public ConditionalJumps(int j) {
 		super(j);

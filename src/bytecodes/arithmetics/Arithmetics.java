@@ -44,7 +44,7 @@ abstract public class Arithmetics extends ByteCode {
 	
 	/**
 	 * Realiza el parse de una instruccion Arithmetics
-	 * @param string1
+	 * @param string1 string que se va a utilizar en el parse
 	 * @return un objeto Bytecode si la sintaxis es correcta o null si es incorrecta
 	 */
 	abstract public ByteCode parseAux(String string1);

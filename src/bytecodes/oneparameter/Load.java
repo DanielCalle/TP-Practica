@@ -19,10 +19,10 @@ public class Load extends ByteCodeOneParameter {
 	
 	/**
 	 * Constructora con parametro de ConditionalJumps
-	 * @param j direccion de salto
+	 * @param p parametro del bytecode
 	 */
-	public Load(int param) {
-		super(param);
+	public Load(int p) {
+		super(p);
 	}
 	
 	@Override

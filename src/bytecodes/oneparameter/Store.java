@@ -19,10 +19,10 @@ public class Store extends ByteCodeOneParameter {
 	
 	/**
 	 * Constructora con parametro de Sotre
-	 * @param parametro
+	 * @param p parametro del bytecode
 	 */
-	public Store(int param) {
-		super(param);
+	public Store(int p) {
+		super(p);
 	}
 
 

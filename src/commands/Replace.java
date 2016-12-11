@@ -20,6 +20,7 @@ public class Replace extends Command {
 	
 	/**
 	 * Constructora de Replace con parámetro.
+	 * @param argument argumento que se utiliza en este comando.
 	 */
 	public Replace(int argument) {
 		this.argument = argument;

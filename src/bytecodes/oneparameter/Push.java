@@ -19,10 +19,10 @@ public class Push extends ByteCodeOneParameter {
 	
 	/**
 	 * Constructora con parametro de Push
-	 * @param p parametro
+	 * @param p parametro del bytecode
 	 */
-	public Push(int param) {
-		super(param);
+	public Push(int p) {
+		super(p);
 	}
 
 	@Override

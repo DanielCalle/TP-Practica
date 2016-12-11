@@ -13,15 +13,15 @@ abstract public class ByteCode {
 
 	/**
 	 * Ejecuta la instruccion bytecode
-	 * @param cpu
-	 * @return true si la instruccion se ejecuto correctamente o false si hubo un problema.
+	 * @param cpu La CPU en la que se ejecuta el bytecode
+	 * @return true Si la instruccion se ejecuto correctamente o false si hubo un problema.
 	 */
 	abstract public boolean execute(CPU cpu);
 	
 	/**
 	 * Realiza el parse de la instruccion bytecode
-	 * @param words
-	 * @return un objeto ByteCode si la sintaxis es correcta o null si no lo es
+	 * @param words Array de palabras que se van a utilizar en el parse
+	 * @return Un objeto ByteCode si la sintaxis es correcta o null si no lo es
 	 */
 	abstract public ByteCode parse(String[] words);
 

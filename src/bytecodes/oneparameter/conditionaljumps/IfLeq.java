@@ -18,10 +18,10 @@ public class IfLeq extends ConditionalJumps {
 	
 	/**
 	 * Constructora con parametro de IfLeq
-	 * @param j direccion de salto
+	 * @param j dirección de salto
 	 */
-	public IfLeq(int param) {
-		super(param);
+	public IfLeq(int j) {
+		super(j);
 	}
 	
 	@Override
