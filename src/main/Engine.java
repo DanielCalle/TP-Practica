@@ -116,7 +116,7 @@ public class Engine {
 			line = sc.nextLine();
 			instruction = ByteCodeParser.parse(line);
 			if( instruction == null ){	
-				endBC = line.trim().compareToIgnoreCase("END") == 0;	
+				endBC = line.trim().equalsIgnoreCase("END");	
 				if( !endBC ) {
 					statusOkey = false;
 					this.program.reset();

@@ -3,7 +3,7 @@ package commands;
 import main.Engine;
 
 /**
- * Comando que permite introducir o añadir instrucciones a nuestro programa.
+ * Comando que permite introducir instrucciones a nuestro programa.
  * 
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
