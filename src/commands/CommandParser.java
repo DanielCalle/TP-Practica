@@ -10,7 +10,8 @@ public class CommandParser {
 
 	private final static Command[] COMMANDS = {
 			new Help(), new Quit(), new Reset(),
-			new Replace(), new Run(), new AddByteCodeProgram()
+			new Replace(), new Run(), new AddByteCodeProgram(),
+			new Compile(), new Load()
 	};
 	
 	/**

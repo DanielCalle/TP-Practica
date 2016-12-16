@@ -7,22 +7,22 @@ import cpu.CPU;
  *
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
- * @version 2.0, 08/12/2016
+ * @version 3.0, 16/12/2016
  */
-abstract public class ByteCode {
+public interface ByteCode {
 
 	/**
 	 * Ejecuta la instruccion bytecode
 	 * @param cpu La CPU en la que se ejecuta el bytecode
 	 * @return true Si la instruccion se ejecuto correctamente o false si hubo un problema.
 	 */
-	abstract public boolean execute(CPU cpu);
+	public boolean execute(CPU cpu);
 	
 	/**
 	 * Realiza el parse de la instruccion bytecode
 	 * @param words Array de palabras que se van a utilizar en el parse
 	 * @return Un objeto ByteCode si la sintaxis es correcta o null si no lo es
 	 */
-	abstract public ByteCode parse(String[] words);
+	public ByteCode parse(String[] words);
 
 }

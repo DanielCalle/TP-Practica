@@ -7,9 +7,9 @@ import main.Engine;
  * 
  * @author Daniel Calle Sánchez
  * @author Manuel Guerrero Moñús
- * @version 2.0, 08/12/2016
+ * @version 3.0, 16/12/2016
  */
-public class Quit extends Command {
+public class Quit implements Command {
 	
 	/**
 	 * Texto de ayuda del comando.
